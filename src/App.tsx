@@ -9,21 +9,24 @@ import { IdeasView } from './components/IdeasView';
 import { MenuView } from './components/MenuView';
 import { SearchModal } from './components/SearchModal';
 import { GetStartedModal } from './components/GetStartedModal';
+import { DisqusComments } from './components/DisqusComments';
 
 const AppContent: React.FC = () => {
   const { activeTab } = useMarket();
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0f131e] text-gray-900 dark:text-[#e3e2e6] font-sans antialiased transition-colors">
+    <div className="min-h-screen bg-white dark:bg-[#0f131e] text-gray-900 dark:text-[#e3e2e6] font-sans antialiased transition-colors flex flex-col">
       <Header />
 
-      <main>
+      <main className="flex-grow">
         {activeTab === 'explore' && <ExploreView />}
         {activeTab === 'chart' && <ChartView />}
         {activeTab === 'watchlist' && <WatchlistView />}
         {activeTab === 'ideas' && <IdeasView />}
         {activeTab === 'menu' && <MenuView />}
       </main>
+
+      <DisqusComments />
 
       <BottomNav />
       <SearchModal />
