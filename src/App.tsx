@@ -9,7 +9,6 @@ import { IdeasView } from './components/IdeasView';
 import { MenuView } from './components/MenuView';
 import { SearchModal } from './components/SearchModal';
 import { GetStartedModal } from './components/GetStartedModal';
-import { DisqusComments } from './components/DisqusComments';
 
 const AppContent: React.FC = () => {
   const { activeTab } = useMarket();
@@ -25,8 +24,6 @@ const AppContent: React.FC = () => {
         {activeTab === 'ideas' && <IdeasView />}
         {activeTab === 'menu' && <MenuView />}
       </main>
-
-      <DisqusComments />
 
       <BottomNav />
       <SearchModal />

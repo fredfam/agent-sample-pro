@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ChevronRight, ChevronDown, Play, Star, TrendingUp, TrendingDown } from 'lucide-react';
 import { useMarket } from '../context/MarketContext';
 import { MarketSymbol } from '../types';
+import { DisqusComments } from './DisqusComments';
 
 export const ExploreView: React.FC = () => {
   const { markets, setActiveSymbolById, setActiveTab, toggleWatchlist, isInWatchlist } = useMarket();
@@ -255,6 +256,9 @@ export const ExploreView: React.FC = () => {
           </div>
         </section>
       )}
+
+      {/* Embedded Discussion Forum at bottom of Landing Page */}
+      <DisqusComments />
     </div>
   );
 };
